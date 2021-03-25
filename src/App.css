@@ -13,7 +13,7 @@
 #bgImg {
     background-image: url("./files/kisspng-hearthstone-texture-mapping-3d-computer-graphics-a-chocolate-background-5aac189f8939b8.5808127115212279355621.png");
     background-repeat: repeat;
-    background-size: 300px;
+    background-size: 30%;
     filter: blur(0.5px);
     z-index: -1;
     position: fixed;
@@ -52,7 +52,7 @@ body:active {
 }
 
 .cardImg {
-    max-width: 150px;
+    max-width: 16%;
 }
 
 ::-webkit-scrollbar {

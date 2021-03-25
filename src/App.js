@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import './normalize.css'
 import './skeleton.css'

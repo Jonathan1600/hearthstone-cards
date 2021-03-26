@@ -12,7 +12,7 @@ export const fetchData = () => {
 
         const options = {
             method: 'GET',
-            url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/basic',
+            url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/classic',
             headers: {
                 'x-rapidapi-key': '459a9b1ebemsh065f357eeb6b253p18a538jsnd497d7ccee7d',
                 'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'

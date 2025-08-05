@@ -9,7 +9,7 @@ Deploy your own React project, along with Serverless Functions, with Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/create-react-app-functions)
 
-_Live Example: [https://hearthstone-cards-jonathan1600.vercel.app/](https://hearthstone-cards-jonathan1600.vercel.app/)_
+_Live Example: [https://hearthstone-cards.vercel.app/](https://hearthstone-cards.vercel.app/)_
 
 ### How We Created This Example
 

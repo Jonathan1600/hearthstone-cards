@@ -15,11 +15,11 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "dev": "BROWSER=none react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "start": "react-scripts start",
-    "eject": "react-scripts eject"
+    "dev": "BROWSER=none react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts --openssl-legacy-provider test",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "eject": "react-scripts --openssl-legacy-provider eject"
   },
   "browserslist": [
     ">0.2%",

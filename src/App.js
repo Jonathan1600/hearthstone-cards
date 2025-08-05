@@ -12,12 +12,14 @@ const App = (props) => {
   const { fetchData } = props;
   useEffect(() => {
     fetchData();
+    console.log(props)
   }, [fetchData])
+  const cardsFetchData = props.cards
 
   return (
     <div className="App">
       {props.error ? <p style={{ color: "red" }}>{props.error}</p> : null}
-      {props.isLoading ? <Loader
+      {props.isLoading || (cardsFetchData.cards && cardsFetchData.cards.lenght < 1)  ? <Loader
         className={"loader"}
         type="Puff"
         color="#00BFFF"
@@ -25,7 +27,7 @@ const App = (props) => {
         width={100}
         timeout={3000} //3 secs
       /> :
-        <div className={"container"} id={"display"}><div id={"bgImg"}></div><h1>Hearthstone: <br></br> Basic Card Set</h1>
+        <div className={"container"} id={"display"}><div id={"bgImg"}></div><h1>Hearthstone: <br></br>Card Set</h1>
           <CardList cards={props.cards} /><p>Made by: Jonathan Calderon</p></div>
       }
 

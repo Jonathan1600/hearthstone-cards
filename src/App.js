@@ -27,8 +27,15 @@ const App = (props) => {
         width={100}
         timeout={3000} //3 secs
       /> :
-        <div className={"container"} id={"display"}><div id={"bgImg"}></div><h1>Hearthstone: <br></br>Card Set</h1>
-          <CardList cards={props.cards} /><p>Made by: Jonathan Calderon</p></div>
+        <div className={"container"} id={"display"}>
+          <div id={"bgImg"}></div>
+          <header className="main-header">
+            <h1>Hearthstone Card Explorer</h1>
+            <p className="subtitle">Browse the basic set of Hearthstone cards</p>
+          </header>
+          <CardList cards={props.cards} />
+          <p>Made by: Jonathan Calderon</p>
+        </div>
       }
 
     </div>

@@ -94,3 +94,46 @@ body:active {
         transform: rotate(360deg);
     }
 }
+
+.main-header {
+    font-family: 'HearthFont', serif;
+    color: #ffe7a0;
+    text-shadow: 2px 2px 6px #2d1a06, 0 0 8px #bfa76a;
+    background: rgba(60, 40, 20, 0.92);
+    border-radius: 32px;
+    margin-bottom: 2.5rem;
+    padding: 2.5rem 4vw 2rem 4vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 6px #bfa76a;
+    display: block;
+    max-width: 900px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1rem 0;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #fff0dc;
+    margin: 0;
+    text-shadow: 1px 1px 2px #2d1a06;
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 1.2rem 2vw 1rem 2vw;
+        max-width: 98vw;
+        border-radius: 18px;
+    }
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+}

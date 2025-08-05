@@ -1,4 +1,3 @@
-![React Logo](https://github.com/vercel/vercel/blob/master/packages/frameworks/logos/react.svg)
 
 # React Example
 
@@ -10,7 +9,7 @@ Deploy your own React project, along with Serverless Functions, with Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/create-react-app-functions)
 
-_Live Example: [https://hearthstone-cards-4r6ovrqwe-jonathan1600.vercel.app/](https://hearthstone-cards-4r6ovrqwe-jonathan1600.vercel.app/)_
+_Live Example: [https://hearthstone-cards-jonathan1600.vercel.app/](https://hearthstone-cards-jonathan1600.vercel.app/)_
 
 ### How We Created This Example
 

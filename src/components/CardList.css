@@ -17,9 +17,10 @@
   color: rgb(255, 240, 220);
   font-family: 'HearthFont', serif;
   position: relative;
+  cursor: pointer;
 }
 
-.card-item:hover {
+.card-item:hover, .card-item:focus {
   transform: translateY(-8px) scale(1.04);
   box-shadow: 0 8px 32px 0 #bfa76a, 0 0 0 4px #ffe7a0;
   z-index: 2;
@@ -37,17 +38,21 @@
 }
 
 .card-name {
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem 0;
+  font-size: 1.35rem;
+  margin: 0 0 0.7rem 0;
   color: #ffe7a0;
   text-shadow: 1px 1px 2px #2d1a06;
+  letter-spacing: 1.2px;
+  line-height: 1.25;
 }
 
 .card-meta {
   display: flex;
   gap: 1rem;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+  line-height: 1.3;
 }
 
 .card-mana {
@@ -67,10 +72,85 @@
 }
 
 .card-desc {
-  font-size: 0.98rem;
-  margin-top: 0.5rem;
+  font-size: 1.08rem;
+  margin-top: 0.7rem;
   color: #fff0dc;
   text-shadow: 0 1px 2px #2d1a06;
+  letter-spacing: 0.7px;
+  line-height: 1.5;
+}
+
+/* --- Card Zoom Modal Styles --- */
+.card-zoom-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 10, 2, 0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+
+.card-zoom-modal {
+  background: rgba(60, 40, 20, 0.98);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 #bfa76a, 0 0 0 6px #ffe7a0;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 480px;
+  width: 95vw;
+  position: relative;
+  text-align: center;
+  color: #ffe7a0;
+  font-family: 'HearthFont', serif;
+}
+
+.card-zoom-img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #2d1a06;
+  margin-bottom: 1.5rem;
+  background: #2d1a06;
+}
+
+.card-zoom-info {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.card-zoom-info .card-name {
+  font-size: 1.7rem;
+  letter-spacing: 1.5px;
+  line-height: 1.25;
+}
+
+.card-zoom-info .card-meta {
+  font-size: 1.15rem;
+  letter-spacing: 1.1px;
+  line-height: 1.3;
+}
+
+.card-zoom-info .card-desc {
+  font-size: 1.18rem;
+  letter-spacing: 0.8px;
+  line-height: 1.6;
+}
+
+.card-zoom-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #ffe7a0;
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 10;
+  text-shadow: 1px 1px 4px #2d1a06;
+  transition: color 0.2s;
+}
+.card-zoom-close:hover {
+  color: #bfa76a;
 }
 
 @media (max-width: 600px) {
@@ -82,4 +162,26 @@
   .card-item {
     max-width: 98vw;
   }
+  .card-zoom-modal {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+    border-radius: 18px;
+  }
+  .card-zoom-img {
+    max-width: 90vw;
+  }
+  .card-zoom-info .card-name {
+    font-size: 1.2rem;
+  }
+  .card-zoom-info .card-meta {
+    font-size: 1rem;
+  }
+  .card-zoom-info .card-desc {
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 } 

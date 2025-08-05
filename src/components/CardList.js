@@ -1,11 +1,15 @@
 import React from 'react';
 
 const CardList = (props) => {
+    const cards = Array.isArray(props.cards.cards) ? props.cards.cards : [];
+
+    console.log("Card List Props.cards:", cards, props)
     return (
         <div className={"cardListDiv container"}>
-            {props.cards.map(
+            {cards.map(
                 card => {
-                    return card.img ? <img alt={card.name} key={card.cardId} src={card.img} className={"cardImg"} /> : null
+                    console.log(card)
+                    return card.image ? <img alt={card.name} key={card.id} src={card.image} className={"cardImg"} /> : null
                 }
             )}
         </div >

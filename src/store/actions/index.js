@@ -4,24 +4,22 @@ export const FETCH_CARDS_START = "FETCH_CARDS_START"
 export const FETCH_CARDS_FAILURE = "FETCH_CARDS_FAILURE"
 
 export const fetchData = () => {
+    const auth = process.env.REACT_APP_BLIZZARD_AUTH
     return (dispatch) => {
         dispatch({ type: FETCH_CARDS_START });
-
-
-
+        console.log( "AUTH",auth)
 
         const options = {
             method: 'GET',
-            url: 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/basic',
+            url: 'https://us.api.blizzard.com/hearthstone/cards?locale=en_US',
             headers: {
-                'x-rapidapi-key': '459a9b1ebemsh065f357eeb6b253p18a538jsnd497d7ccee7d',
-                'x-rapidapi-host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
+                'Authorization': `Bearer ${auth}`
             }
         };
 
         axios.request(options).then(function (res) {
 
-            console.log(res.data);
+            console.log("Response Data:", res.data);
             dispatch({ type: FETCH_CARDS_SUCCESS, payload: res.data });
         }).catch(function (err) {
             console.error(err);

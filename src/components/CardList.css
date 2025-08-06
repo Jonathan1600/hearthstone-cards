@@ -1,9 +1,10 @@
 .card-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 0.1fr));
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
+  justify-content: center;
 }
 
 .card-item {
@@ -157,7 +158,7 @@
   .card-list-grid {
     grid-template-columns: 1fr;
     padding: 1rem;
-    gap: 1rem;
+    gap: 1.5rem 0.7rem;
   }
   .card-item {
     max-width: 98vw;

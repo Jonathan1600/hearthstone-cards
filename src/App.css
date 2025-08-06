@@ -178,7 +178,15 @@ body:active {
     border-color: #ffe7a0;
     box-shadow: 0 4px 16px #bfa76a;
     background: #4d341a;
+    color: #ffe7a0;
+}
+
+.card-sort-select option {
+    background: #ffe7a0;
     color: #2d1a06;
+    font-family: 'HearthFont', serif;
+    font-size: 1.1rem;
+    border-radius: 40px;
 }
 
 @media (max-width: 600px) {

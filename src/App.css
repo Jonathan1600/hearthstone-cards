@@ -35,7 +35,6 @@ body:active {
 .App {
     text-align: center;
     display: flex;
-    min-height: 100vh;
     width: 100vw;
     flex-wrap: wrap;
     flex-direction: column;
@@ -46,7 +45,7 @@ body:active {
 
 #display {
     font-family: 'HearthFont';
-    padding-top: 5%;
+    padding-top: min(50px, 5%);
     background: transparent;
     color: rgb(255, 240, 220);
 }

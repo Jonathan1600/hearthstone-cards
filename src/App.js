@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import './normalize.css'
 import './skeleton.css'
@@ -11,18 +10,27 @@ import CardList from './components/CardList';
 const App = (props) => {
   const { fetchData } = props;
   const [filter, setFilter] = useState("");
+  const [sortOrder, setSortOrder] = useState("none");
   useEffect(() => {
     fetchData();
   }, [fetchData])
   const cardsFetchData = props.cards
 
+  let filteredCardsArr = Array.isArray(props.cards.cards)
+    ? props.cards.cards.filter(card =>
+        card.name && card.name.toLowerCase().includes(filter.toLowerCase())
+      )
+    : [];
+
+  if (sortOrder === "asc") {
+    filteredCardsArr = filteredCardsArr.slice().sort((a, b) => (a.manaCost || 0) - (b.manaCost || 0));
+  } else if (sortOrder === "desc") {
+    filteredCardsArr = filteredCardsArr.slice().sort((a, b) => (b.manaCost || 0) - (a.manaCost || 0));
+  }
+
   const filteredCards = {
     ...props.cards,
-    cards: Array.isArray(props.cards.cards)
-      ? props.cards.cards.filter(card =>
-          card.name && card.name.toLowerCase().includes(filter.toLowerCase())
-        )
-      : []
+    cards: filteredCardsArr
   };
 
   return (
@@ -50,6 +58,15 @@ const App = (props) => {
               value={filter}
               onChange={e => setFilter(e.target.value)}
             />
+            <select
+              className="card-sort-select"
+              value={sortOrder}
+              onChange={e => setSortOrder(e.target.value)}
+            >
+              <option value="none">Sort</option>
+              <option value="asc">Mana: Low to High</option>
+              <option value="desc">Mana: High to Low</option>
+            </select>
           </div>
           <CardList cards={filteredCards} />
           <p>Made by: Jonathan Calderon</p>

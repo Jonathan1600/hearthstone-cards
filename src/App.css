@@ -133,23 +133,27 @@ body:active {
 
 .card-filter-input {
     font-family: 'HearthFont', serif;
-    font-size: 1.2rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 18px;
-    border: 2px solid #bfa76a;
-    background: rgba(60, 40, 20, 0.85);
     color: #ffe7a0;
     outline: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25), 0 0 0 6px #2d1a06 inset;
     width: 100%;
-    max-width: 420px;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    max-width: 600px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     margin: 0 auto;
+    letter-spacing: 1.2px;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .card-filter-input:focus {
-    border-color: #ffe7a0;
-    box-shadow: 0 4px 16px #bfa76a;
+    box-shadow: 0 6px 32px #bfa76a, 0 0 0 8px #2d1a06 inset;
+    color: #ffe7a0;;
+}
+
+.card-filter-input::placeholder {
+    color: #ffe7a0;
+    opacity: 0.8;
+    letter-spacing: 1.1px;
 }
 
 @media (max-width: 600px) {
@@ -166,7 +170,8 @@ body:active {
     }
     .card-filter-input {
         font-size: 1rem;
-        padding: 0.5rem 0.7rem;
-        border-radius: 12px;
+        padding: 0.7rem 1rem;
+        border-radius: 14px;
+        max-width: 98vw;
     }
 }

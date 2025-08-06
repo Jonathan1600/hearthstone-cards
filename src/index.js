@@ -7,12 +7,12 @@ import { Provider } from "react-redux";
 import { reducer } from "./store"
 import thunk from "redux-thunk"
 import logger from "redux-logger"
+import { inject } from '@vercel/analytics';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
-
+inject()
 ReactDOM.render(
   <Provider store={store}>
-
     <App />
   </Provider>,
   document.getElementById('root')

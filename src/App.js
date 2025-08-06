@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import { fetchData } from "./store"
 import Loader from "react-loader-spinner";
 import CardList from './components/CardList';
+import { Analytics } from "@vercel/analytics/react"
 
 const App = (props) => {
   const { fetchData } = props;
@@ -70,6 +71,7 @@ const App = (props) => {
           </div>
           <CardList cards={filteredCards} />
           <p>Made by: Jonathan Calderon</p>
+          <Analytics/>
         </div>
       }
 

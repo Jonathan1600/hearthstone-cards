@@ -1,2 +1,2 @@
 export { reducer } from "./reducers"
-export { fetchData, fetchAuthToken, fetchAuthAndData } from "./actions"
+export { fetchData, fetchAuthToken } from "./actions"

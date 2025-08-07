@@ -6,10 +6,9 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { reducer } from "./store"
 import thunk from "redux-thunk"
-import logger from "redux-logger"
 import { inject } from '@vercel/analytics';
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+const store = createStore(reducer, applyMiddleware(thunk));
 inject()
 ReactDOM.render(
   <Provider store={store}>

@@ -60,11 +60,4 @@ export const fetchAuthToken = () => {
     }
 }
 
-export const fetchAuthAndData = () => {
-    return async (dispatch, getState) => {
-      await dispatch(fetchAuthToken());
-      await dispatch(fetchData()); 
-    };
-  };
-
 

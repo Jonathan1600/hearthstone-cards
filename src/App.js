@@ -3,17 +3,25 @@ import './App.css';
 import './normalize.css'
 import './skeleton.css'
 import { connect } from "react-redux"
-import { fetchData } from "./store"
+import { fetchData, fetchAuthToken } from "./store"
 import Loader from "react-loader-spinner";
 import CardList from './components/CardList';
 
 const App = (props) => {
-  const { fetchData } = props;
+  const { fetchData, fetchAuthToken } = props;
   const [filter, setFilter] = useState("");
   const [sortOrder, setSortOrder] = useState("none");
+
   useEffect(() => {
-    fetchData();
-  }, [fetchData])
+    fetchAuthToken();
+  }, []);
+
+  useEffect(() => {
+    if (props.authToken) {
+      fetchData(); 
+    }
+  }, [props.authToken]);
+
   const cardsFetchData = props.cards
 
   let filteredCardsArr = Array.isArray(props.cards.cards)
@@ -81,9 +89,10 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     cards: state.cards,
+    authToken: state.authToken,
     error: state.error
   }
 }
 
-export default connect(mapStateToProps, { fetchData })(App);
+export default connect(mapStateToProps, { fetchData, fetchAuthToken})(App);
 
